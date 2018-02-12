@@ -1,9 +1,9 @@
 # Tanebox
 
-個人プロジェクトとしてRubyフレームワークのHanamiを利用したWebサービスをつくっています。
+個人プロジェクトとしてRubyフレームワークのHanamiを利用したWebサービスをつくっています。  
 様々なジャンルのWebサービスを高速に、かつ1つのシステム内で、かんたんにつくれるようにする、という試みです。
 
-We build Web services with Ruby on Hanami for pet project.
+We build Web services with Ruby on Hanami for pet project.  
 We try to make easy, rapid and various web services just on the one system.
 
 Website(Japanese) -> https://[ToDo: write later]
@@ -65,4 +65,5 @@ Explore Hanami [guides](http://hanamirb.org/guides/), [API docs](http://hanamirb
 ## Routing
 - https://[domainname]/ <- call apps/web
 - https://[domainname]/[appname] <- call apps/[appname]
+
 It easy to setup SSL Certificate and Web Analytics(such as Google Analytics).
