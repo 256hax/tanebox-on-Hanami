@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= stylesheet 'https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css' %>
+    <!--Import Google Icon Font-->
+    <%= stylesheet 'material-icons' %>
+    <!-- Compiled and minified CSS -->
+    <%= stylesheet 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css' %>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--Import jQuery before materialize.js-->
+    <%= javascript 'jquery-3.2.1.min' %>
+    <!-- Compiled and minified JavaScript -->
+    <%= javascript 'materialize.min' %>
+    <!-- init -->
+    <%= stylesheet 'style' %>
+    <%= javascript 'init' %>
+    <title><%= meta_title %></title>
+    <%= favicon %>
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="orange darken-2" role="navigation">
+      <div class="nav-wrapper container"><a href="<%= routes.root_path %>">みんなのほめノート</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="<%= routes.articles_path(page: 'about') %>">ほめノートとは？</a></li>
+          <li><a href="<%= routes.articles_path(page: 'howto') %>">使い方</a></li>
+          <li><a href="<%= routes.new_messages_path %>">書いてみる</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+          <li><a href="<%= routes.articles_path(page: 'about') %>">ほめノートとは？</a></li>
+          <li><a href="<%= routes.articles_path(page: 'howto') %>">使い方</a></li>
+          <li><a href="<%= routes.new_messages_path %>">書いてみる</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+
+    <%= yield %>
+
+    <!-- Floating Action Button(追従ボタン) -->
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large waves-effect waves-light red" href="<%= routes.new_messages_path %>">
+        <i class="large material-icons">mode_edit</i>
+      </a>
+    </div>
+
+    <footer class="page-footer orange">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">みんなのほめノート</h5>
+            <p class="grey-text text-lighten-4">まいにち、自分をほめよう！ 自分へのほめ言葉が匿名で投稿できる「みんなのほめノート」</p>
+            <p class="grey-text text-lighten-4">Built with Ruby on <a href="http://hanamirb.org/" target="_blank">Hanami 🌸</a></p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="<%= routes.articles_path(page: 'about') %>">ほめノートとは？</a></li>
+              <li><a class="grey-text text-lighten-3" href="<%= routes.articles_path(page: 'howto') %>">ほめノートの使い方</a></li>
+              <li><a class="grey-text text-lighten-3" href="<%= routes.articles_path(page: 'thankyou') %>">Thank you!</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright orange darken-2">
+        <div class="container">
+          <a class="grey-text text-lighten-4" href="http://256hax.in/" target="_blank">© 256hax</a>
+          <a class="grey-text text-lighten-4 right" href="/">→ tanebox</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

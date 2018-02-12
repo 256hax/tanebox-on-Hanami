@@ -1,0 +1,6 @@
+<%=
+  form_for :like, routes.likes_path do
+    hidden_field :message_id, value: 1
+    submit 'Create Like'
+  end
+%>

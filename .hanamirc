@@ -1,0 +1,3 @@
+project=tanebox
+test=minitest
+template=erb

@@ -1,0 +1,8 @@
+/db/*.sqlite
+/tmp
+/vendor
+/public/*
+/log
+.env.development
+.env.test
+.DS_Store

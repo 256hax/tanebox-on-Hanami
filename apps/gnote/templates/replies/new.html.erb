@@ -1,0 +1,40 @@
+<div class="container">
+  <h3 class="orange-text text-darken-3">ほめノートにコメントを書く</h3>
+  <!-- error messages -->
+  <% unless params.valid? %>
+    <div class="row">
+      <% error_messages(params.errors).each do |error_message| %>
+        <div class="card red lighten-5">
+          <div class="card-content red-text">
+            <%= error_message %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <!-- /error messages -->
+
+  <div class="row">
+    <%=
+      form_for :reply, routes.create_replies_path(message_id: message_id, reply_to_id: reply_to_id) do
+        div class: 'input-field' do
+          text_area :content, class: 'materialize-textarea'
+          label "「#{quote_message_or_reply.result.content}」へのコメントは・・・"
+        end
+        # Usage hidden_field: http://www.rubydoc.info/gems/hanami-helpers/Hanami/Helpers/FormHelper/FormBuilder#hidden_field-instance_method
+        div class: 'section grey-text' do
+          p do
+           span 0, id: 'count-text-lengths'
+           span '/280文字'
+          end
+        end
+        hidden_field :message_id, value: message_id
+        hidden_field :reply_to_id, value: reply_to_id
+        submit 'コメントを書く', class: 'btn waves-effect waves-light'
+      end
+    %>
+    <p id="count-text-lengths"></p>
+  </div>
+</div>
+
+<%= javascript 'note_actions' %>

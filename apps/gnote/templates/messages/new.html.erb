@@ -1,0 +1,37 @@
+<div class="container">
+  <h3 class="orange-text text-darken-3">ほめノートに書く</h3>
+  <!-- error messages -->
+  <% unless params.valid? %>
+    <div class="row">
+      <% error_messages(params.errors).each do |error_message| %>
+        <div class="card red lighten-5">
+          <div class="card-content red-text">
+            <%= error_message %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <!-- /error messages -->
+
+  <div class="row">
+    <%=
+      form_for :message, routes.root_path do
+        div class: 'input-field' do
+          text_area :content, class: 'materialize-textarea'
+          label '今日の自分へのほめ言葉は・・・'
+        end
+        div class: 'section grey-text' do
+          p do
+           span 0, id: 'count-text-lengths'
+           span '/280文字'
+          end
+        end
+        submit 'ほめノートに書く', class: 'btn waves-effect waves-light'
+      end
+    %>
+    <p id="count-text-lengths"></p>
+  </div>
+</div>
+
+<%= javascript 'note_actions' %>

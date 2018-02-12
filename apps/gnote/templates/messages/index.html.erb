@@ -1,0 +1,85 @@
+<div class="container">
+  <h3 class="orange-text text-darken-3">みんなのほめノート</h3>
+  <p>まいにち、自分をほめよう！ 自分へのほめ言葉が匿名で投稿できる「みんなのほめノート」</p>
+
+  <div class="row">
+
+    <div class="col s12 m7">
+      <div class="card">
+        <div class="card-image">
+          <%= image 'box-2953722_640.jpg' %>
+        </div>
+        <div class="card-content">
+          <p>人間は、ほめられるとそれが自分へのご褒美となって、モチベーションや思考力が高まることをご存知ですか？ そして自分自身をほめても効果があると言われています。</p>
+        </div>
+        <div class="card-action">
+          <a href="<%= routes.articles_path(page: 'about') %>">もっと詳しく見る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="section">
+      <div class="col s12">
+        <a class="btn-floating pulse btn-large waves-effect waves-light red" href="<%= routes.new_messages_path %>"><i class="material-icons">mode_edit</i></a>
+      </div>
+    </div>
+    <div class="section">
+      <div class="col s12">
+        <p>投稿は１週間分のみ表示されます。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Messages -->
+  <% messages_with_all_associations.list.each do |m| %>
+    <div class="row" id="message-<%= m.id %>">
+      <div class="divider"></div>
+      <div class="section">
+        <div class="col s12">
+          <span class="grey-text">匿名さん・<%= mmdd_wday_to_ja m.created_at %></span>
+        </div>
+        <div class="col s12">
+          <p><%= ha(m.content) %></p>
+        </div>
+        <div class="col s1">
+          <a href="<%= routes.new_replies_path(message_id: m.id, reply_to_id: 0) %>" rel="nofollow"><i class="material-icons">reply</i></a>
+        </div>
+        <!-- Like -->
+        <div class="col s3">
+          <a class="like-actions" href="#ajax" data-like='{"action":"<%= like_action(m.gnote_like) %>", "method":"<%= like_method(m.gnote_like) %>", "url":"<%= like_url(m.gnote_like) %>", "message_id":"<%= m.id %>"}' rel="nofollow">
+            <i class="material-icons">favorite</i><span id="like-<%= m.id %>-sum"><%= likes_sum_number(m.gnote_like) %></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Replies -->
+    <% m.gnote_replies.each do |r| %>
+      <div class="row" id="reply-<%= r.id %>">
+        <div class="divider"></div>
+        <div class="section">
+          <div class="col s11 offset-s1">
+            <span class="grey-text">匿名さん・<%= mmdd_wday_to_ja r.created_at %></span>
+          </div>
+          <div class="col s11 offset-s1">
+            <p><span class="grey-text text-darken-2"><%= ha(r.content) %></span></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="row">
+    <div class="section">
+      <h4>こんなほめ方もあります</h4>
+      <!-- Twitter Widgets a tag source here -->
+      <a class="twitter-timeline"  href="https://twitter.com/search?q=%E5%81%89%E3%81%84%20%E3%81%99%E3%81%94%E3%81%84" data-widget-id="960678433960308736">Tweets about 偉い すごい</a>
+    </div>
+  </div>
+
+</div>
+
+<%= javascript 'like_actions' %>
+<%= javascript 'embed_twitter_widgets' %>
