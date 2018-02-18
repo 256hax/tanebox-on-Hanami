@@ -1,9 +1,9 @@
 class UserRepository < Hanami::Repository
-  def find_by_provider_and_uid provider, uid
+  def find_by_provider_and_uid(provider, uid)
     users.where(provider: provider, uid: uid).one
   end
 
-  def register auth
+  def register(auth)
     create(
       provider:   auth.provider,
       uid:        auth.uid,

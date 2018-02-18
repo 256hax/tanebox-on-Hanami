@@ -9,7 +9,7 @@ class FindOrCreateUserForAuth
     @repository = repository
   end
 
-  def call auth
+  def call(auth)
     @user = @repository.find_by_provider_and_uid(auth.provider, auth.uid) || @repository.register(auth)
   end
 end
