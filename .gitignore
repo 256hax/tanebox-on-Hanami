@@ -3,6 +3,11 @@
 /vendor
 /public/*
 /log
+
+# env files
 .env.development
 .env.test
+.envrc
+
+# for Mac
 .DS_Store

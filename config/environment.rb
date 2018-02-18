@@ -2,11 +2,13 @@ require 'bundler/setup'
 require 'hanami/setup'
 require 'hanami/model'
 require_relative '../lib/tanebox'
+require_relative '../apps/admin/application'
 require_relative '../apps/gnote_api/application'
 require_relative '../apps/gnote/application'
 require_relative '../apps/web/application'
 
 Hanami.configure do
+  mount Admin::Application, at: '/admin'
   mount GnoteApi::Application, at: '/gnote_api'
   mount Gnote::Application, at: '/gnote'
   mount Web::Application, at: '/'
