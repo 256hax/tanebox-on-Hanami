@@ -1,0 +1,9 @@
+<% notes.list.each do |l| %>
+  <p>
+    <a href="<%= routes.edit_note_path(id: l.id) %>"><%= l.id %></a> |
+    <%= l.category_name %> |
+    <%= l.title %>
+  </p>
+<% end %>
+
+<p><a href="<%= routes.new_note_path %>">ノートを作る</a></p>
