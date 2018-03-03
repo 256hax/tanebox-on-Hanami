@@ -16,7 +16,7 @@ Hanami::Model.migration do
       column :opened, TrueClass, null: false, default: true
       column :open_date, DateTime, null: true
 
-      index [:category_name, :title], unique: false
+      index [:category_name, :title]
     end
   end
 end

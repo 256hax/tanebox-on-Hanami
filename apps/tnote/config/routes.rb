@@ -13,3 +13,5 @@
 # delete '/notes/:id', to: 'notes#destroy'
 
 resources :notes
+resources :note_with_streams, only: [:edit]
+#get '/note_with_streams/:id/edit', to: 'note_with_streams#edit'
