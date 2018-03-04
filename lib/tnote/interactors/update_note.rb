@@ -12,7 +12,6 @@ module Tnote
 
     def call(note_id, note)
       @note = @repository.update(note_id, note)
-      Hanami.logger.debug note.inspect
     end
   end
 end
