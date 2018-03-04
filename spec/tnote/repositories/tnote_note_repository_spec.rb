@@ -12,4 +12,9 @@ describe TnoteNoteRepository do
     stream_content = @note_with_all_associations.list.tnote_streams[0].content
     stream_content.must_equal 'no issues'
   end
+
+  it 'find TnoteNote data' do
+    @note = Tnote::IndexNotes.new.call
+    @note.list[0].id.must_equal 1
+  end
 end
