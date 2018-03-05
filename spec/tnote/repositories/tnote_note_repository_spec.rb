@@ -3,18 +3,13 @@ require_relative '../../factories/tnote_note_factory'
 require_relative '../../factories/tnote_stream_factory'
 
 describe TnoteNoteRepository do
-  test_data = TnoteNoteFactory.new.create # call factories/tnote_note_factory.rb
-  note_id = test_data[:note].id
-  test_data.merge!(TnoteStreamFactory.new.create(note_id))
+  @test_data = TnoteNoteFactory.new.create # call factories/tnote_note_factory.rb
+  @note_id = @test_data[:note].id
+  @test_data.merge!(TnoteStreamFactory.new.create(@note_id))
 
   it 'TnoteNote with TnoteStream associations are successful' do
-    @note_with_all_associations = Tnote::IndexNoteWithAllAssociations.new.call(note_id) # call Interactor
-    stream_content = @note_with_all_associations.list.tnote_streams[0].content
+    note_with_all_associations = Tnote::IndexNoteWithAllAssociations.new.call(@note_id) # call Interactor
+    stream_content = note_with_all_associations.list.tnote_streams[0].content
     stream_content.must_equal 'no issues'
-  end
-
-  it 'find TnoteNote data' do
-    @note = Tnote::IndexNotes.new.call
-    @note.list[0].id.must_equal 1
   end
 end
