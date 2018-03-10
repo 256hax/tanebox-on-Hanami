@@ -6,7 +6,7 @@ module Tnote::Controllers::NoteWithStreams
 
     def call(params)
       note_id = params[:id]
-      @note_with_all_associations = Tnote::IndexNoteWithAllAssociations.new.call(note_id)
+      @note_with_all_associations = Tnote::IndexNoteWithAllAssociations.new.call(note_id).list
     end
   end
 end

@@ -1,7 +1,7 @@
 require 'hanami/interactor'
 
 module Tnote
-  class IndexNotes
+  class IndexNoteWithAllAssociations
     include Hanami::Interactor
 
     expose :list
@@ -10,8 +10,8 @@ module Tnote
       @repository = repository
     end
 
-    def call
-      @list = @repository.all
+    def call(note_id)
+      @list = @repository.find_with_streams(note_id)
     end
   end
 end
