@@ -6,7 +6,7 @@ module Tnote::Controllers::Notes
 
     def call(params)
       @note_id = params[:id]
-      @note = Tnote::ShowNote.new.call(note_id)
+      @note = Tnote::ShowNote.new.call(note_id).data
     end
   end
 end

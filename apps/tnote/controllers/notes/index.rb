@@ -5,7 +5,7 @@ module Tnote::Controllers::Notes
     expose :notes
 
     def call(params)
-      @notes = Tnote::IndexNotes.new.call
+      @notes = Tnote::IndexNotes.new.call.list
     end
   end
 end

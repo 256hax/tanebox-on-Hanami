@@ -12,7 +12,7 @@ module GnoteApi::Controllers::Likes
 
     def call(params)
       if params.valid?
-        @like = Gnote::UpdateLike.new.call(params)
+        @like = Gnote::UpdateLike.new.call(params).result
       end
     end
   end

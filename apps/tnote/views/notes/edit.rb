@@ -3,7 +3,7 @@ module Tnote::Views::Notes
     include Tnote::View
 
     def form_attr
-      Form.new(:note, routes.note_path(id: note_id), {note: note.data}, {method: :patch})
+      Form.new(:note, routes.note_path(id: note_id), {note: note}, {method: :patch})
     end
 
     def submit_label
