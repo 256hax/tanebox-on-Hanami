@@ -9,6 +9,6 @@
 .env.test
 .envrc
 
-# for Mac and settings
+# Mac and settings
 .DS_Store
 .editorconfig
