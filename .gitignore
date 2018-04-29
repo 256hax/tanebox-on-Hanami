@@ -8,6 +8,7 @@
 .env.development
 .env.test
 .envrc
+.ftpconfig
 
 # Mac and settings
 .DS_Store
