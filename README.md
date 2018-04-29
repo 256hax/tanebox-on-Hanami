@@ -6,15 +6,19 @@
 We build Web services with Ruby on Hanami for pet project.  
 We try to make easy, rapid and various web services just on the one system.
 
-Website(Japanese) -> https://[ToDo: write later]
+Website -> https://[TODO: write later]
 
 
 ## Setup
 
-See Hanami setup guide.
+TODO write later
 
-Explore Hanami [guides](http://hanamirb.org/guides/), [API docs](http://hanamirb.org/docs/1.0.0/), or jump in [chat](http://chat.hanamirb.org) for help. Enjoy! 🌸
+## Apps details and Features
 
+### Gnote
+- Hanami + Materialize + Google Fonts
+- Ajax actions with jQuery
+- Twitter Widgets (Keep security policies of Hanami)
 
 ## Architecure Overview
 ### AsIs
@@ -32,10 +36,10 @@ Explore Hanami [guides](http://hanamirb.org/guides/), [API docs](http://hanamirb
 |:-:|:-:|:-:
 |UI |UI |UI
 |↓↑ |↓↑ |↓↑
-|   |Logic|
-|   |↓↑ |
-|   |DB |
-|   |Hanami|
+|   |Logic|　
+|   |↓↑ |　
+|   |DB |　
+|   |Hanami|　
 
 ## Principles(Draft ver)
 - Be a pure Ruby and pure Hanami
@@ -47,9 +51,9 @@ Explore Hanami [guides](http://hanamirb.org/guides/), [API docs](http://hanamirb
   - /web              <- top page and other pages
   - /api              <- share code(common within all Apps)
   - /admin            <- share code(common within all Apps)
-  - /[appname]        <- front-end App
-  - /[appname]_api    <- App API
-  - /[appname]_admin  <- App admin
+  - /[appname]        <- front App
+  - /[appname]_api    <- API App
+  - /[appname]_admin  <- admin App
 - /lib
   - /tanebox          <- share code(common within all Apps)
     - /entities

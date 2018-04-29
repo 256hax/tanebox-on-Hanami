@@ -7,6 +7,9 @@ gem 'hanami-model', '~> 1.1'
 gem 'sqlite3'
 gem 'i18n' # エラーメッセージの日本語化
 
+# OAuth
+gem 'omniauth-google-oauth2'
+
 group :development do
   # Code reloading
   # See: http://hanamirb.org/guides/projects/code-reloading

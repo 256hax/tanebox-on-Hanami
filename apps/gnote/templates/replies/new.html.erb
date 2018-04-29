@@ -19,7 +19,7 @@
       form_for :reply, routes.create_replies_path(message_id: message_id, reply_to_id: reply_to_id) do
         div class: 'input-field' do
           text_area :content, class: 'materialize-textarea'
-          label "「#{quote_message_or_reply.result.content}」へのコメントは・・・"
+          label "「#{quote_message_or_reply.content}」へのコメントは・・・"
         end
         # Usage hidden_field: http://www.rubydoc.info/gems/hanami-helpers/Hanami/Helpers/FormHelper/FormBuilder#hidden_field-instance_method
         div class: 'section grey-text' do
