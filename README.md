@@ -11,14 +11,17 @@ Website -> https://[TODO: write later]
 
 ## Setup
 
-TODO write later
+TODO: write later
 
 ## Apps details and Features
 
-### Gnote
+### Good Note ほめノート
+- apps/gnote
 - Hanami + Materialize + Google Fonts
 - Ajax actions with jQuery
-- Twitter Widgets (Keep security policies of Hanami)
+- Twitter Widgets with Keep security policies of Hanami
+
+![ほめノート](https://raw.githubusercontent.com/256hax/tanebox-on-Hanami/master/apps/gnote/assets/images/screenshot-top.png)
 
 ## Architecure Overview
 ### AsIs
