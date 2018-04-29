@@ -7,9 +7,10 @@ describe Gnote::Views::Messages::Index do
   let(:rendered)  { view.render }
 
   it 'exposes #foo' do
-    skip 'This is an auto-generated test. Edit it and add your own tests.'
-
-    # Example
     view.foo.must_equal exposures.fetch(:foo)
+  end
+
+  it 'meta title' do
+    view.meta_title.must_equal "ほめノート"
   end
 end

@@ -1,0 +1,14 @@
+<%=
+  form_for :note, routes.notes_path do
+    div class: 'input-field' do
+      text_field :category_name, class: 'materialize-textarea'
+      label 'カテゴリーの名前'
+    end
+    div class: 'input-field' do
+      text_field :title, class: 'materialize-textarea'
+      label 'ノートのタイトル'
+    end
+
+    submit 'ノートを作る', class: 'btn waves-effect waves-light'
+  end
+%>

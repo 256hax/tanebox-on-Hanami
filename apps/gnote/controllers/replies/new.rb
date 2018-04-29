@@ -12,9 +12,9 @@ module Gnote::Controllers::Replies
       # 親メッセージは「0」、返信メッセージは「0」以外が入るため、親メッセージと返信メッセージで
       # それぞれ区別して返信ができるようにするための処理。今後実装予定の機能。
       if @reply_to_id == "0"
-        @quote_message_or_reply = Gnote::ShowMessage.new.call(@message_id) # call Interactor
+        @quote_message_or_reply = Gnote::ShowMessage.new.call(@message_id).result # call Interactor
       else
-        @quote_message_or_reply = Gnote::ShowReply.new.call(@reply_to_id) # call Interactor
+        @quote_message_or_reply = Gnote::ShowReply.new.call(@reply_to_id).result # call Interactor
       end
     end
   end

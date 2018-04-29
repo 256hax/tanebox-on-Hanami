@@ -1,0 +1,13 @@
+<h1>ユーザー認証テストページ</h1>
+<p>動作確認用に用意しているページです。開発者以外は使用しないでください。</p>
+<p>User Authentication sample page.</p>
+
+<p><%= flash[:success] %></p>
+<p><%= flash[:error] %></p>
+
+<% if current_user.nil? %>
+  <a href="/auth/google_oauth2">ログイン</a>
+<% else %>
+  <img src="<%= current_user.image_path %>">
+  <%= form %>
+<% end %>
